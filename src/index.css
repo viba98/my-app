@@ -1,0 +1,171 @@
+body {
+       height: 100%;
+       width: 100%;
+       border-radius: 8px;
+       background: #FFFFFF;
+       mix-blend-mode: normal;
+       color: #4D4D4D;
+    }
+
+#bg-blur{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(143.03deg, #DCF6F8 13%, #D0D9F7 91.61%);
+  filter: blur(164px);
+  -webkit-filter: blur(8px);
+  z-index: 0;
+}
+
+#start{
+  position: absolute;
+  width: 179px;
+  height: 49px;
+  left: 110px;
+  top: 198px;
+
+  background: #779AF4;
+  /* blue */
+
+  box-shadow: 0px 4px 9px rgba(164, 181, 226, 0.9);
+  border-radius: 64px;
+  border-width: 0px;
+
+  font-family: 'IBM Plex Serif';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 27px;
+
+  /* Gray 6 */
+  color: #FFF;
+}
+
+a{
+  text-decoration: none;
+}
+
+#feedback{
+  position: absolute;
+  width: 90px;
+  height: 14px;
+  font-family: 'IBM Plex Sans', sans-serif;
+
+  font-style: normal;
+  font-weight: 510;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+  text-transform: capitalize;
+  bottom: 16px;
+  right: 16px;
+
+  color: #8EA6E4;
+
+  opacity: 0.7;
+  z-index: 102;
+}
+
+#times{
+  position: absolute;
+  width: 32px;
+  height: 29px;
+  left: calc(50% - 43px);
+  top: calc(50% - 29px/2 - 30.5px);
+  z-index: 100;
+  background-color: transparent;
+  border-width: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+
+  text-align: center;
+
+  color: #779AF4;
+}
+
+
+label{
+  position: absolute;
+  left:  calc(50% - 4px);
+  top: calc(50% - 29px/2 - 30px);
+
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+
+  text-align: center;
+
+  color: #779AF4;
+
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#likes{
+  background: url("Assets/animation.gif") 0 0 no-repeat;
+  animation-play-state: paused;
+}
+
+.like {
+    width:400px;
+    height:400px;
+    z-index: 1100;
+    mix-blend-mode: overlay;
+}
+
+.paused {
+    animation-play-state: paused;
+}
+
+h5{
+  position: absolute;
+width: 140px;
+height: 16px;
+left: 129px;
+top: 178px;
+
+font-family: 'IBM Plex Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 16px;
+/* identical to box height */
+
+text-align: center;
+text-transform: uppercase;
+
+color: #779AF4;
+}
+
+h1{
+  position: absolute;
+width: 231px;
+height: 33px;
+left: 84px;
+top: 194px;
+
+font-family: 'New York';
+font-style: normal;
+font-weight: 568;
+font-size: 28px;
+line-height: 33px;
+text-align: center;
+
+color: #779AF4;
+}

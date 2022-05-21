@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mindful Pomodoro</title>
+		<link rel="stylesheet" type="text/css" href="index.css"/>
+        <script src="popup.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=IBM+Plex+Serif:wght@600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="bg-blur"></div>
+      <div id="pomodoro">
+			     <div id="timer"></div>
+           <form action="meditation.html" method="get" id="form">
+             <input type="number" id="times" name="timeperiod" value="5" min="1" max="60">
+             <label for="timeperiod">mins</label>
+              <br>
+              <a href=settings.html>
+                <button id="start">Start</button>
+              </a>
+            </form>
+		</div>
+    <div class="bottom bar">
+          <a href="mailto:viba98@gmail.com" class = "bottom" id="feedback">Send Feedback</a>
+    </div>
+  </body>
+</html>
