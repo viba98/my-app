@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, Menu, BrowserWindow } = require('electron');
 const path = require('path');
 const electron = require('electron');
 const Tray = electron.Tray;
@@ -22,7 +22,6 @@ const createWindow = () => {
     minimizable: false,
     maximizable: false,
     resizable: false,
-    movable: true,
     titleBarStyle: 'hidden',
     isVisible: true
   });
@@ -30,29 +29,58 @@ const createWindow = () => {
     mainWindow.webContents.openDevTools();
     mainWindow.loadFile(path.join(__dirname, 'index.html'));
   } else {
-    mainWindow.loadURL(`file://${path.join(__dirname, '../../build/index.html')}`);
+    mainWindow.loadURL(`file://${path.join(__dirname, '../../index.html')}`);
   }
-  mainWindow.on('close', function (event) {
+  /* mainWindow.on('close', function (event) {
     if(!app.isQuiting){
         event.preventDefault();
         mainWindow.hide();
     }
 
     return false;
-});
+}); */
 
   var x = 10;
   tray = new Tray(iconPath)
   tray.setToolTip('Mindful Pomodoro')
   tray.setIgnoreDoubleClickEvents(true)
   tray.setTitle(x + '')
-  tray.on('click', function(){
+
+  /* context menu bar
+  const contextMenu = Menu.buildFromTemplate([
+    { label: 'Quit', click: function () {
+      isQuiting = true;
+      app.quit();
+      },
+    }
+  ])
+  tray.setContextMenu(contextMenu) */
+
+
+   tray.on('click', function(){
     if (mainWindow.isVisible()) {
       mainWindow.hide()
     } else {
       mainWindow.show()
     }
   });
+
+  if (process.platform === 'darwin') {
+  var forceQuit = false;
+  app.on('before-quit', function() {
+    forceQuit = true;
+  });
+  mainWindow.on('close', function(event) {
+    if (!forceQuit) {
+      event.preventDefault();
+      mainWindow.hide()
+      /*
+       * your process here
+       */
+    }
+  });
+}
+
   const titleBarHack =
     'var div = document.createElement("div");' +
     'div.style.position = "absolute";' +
@@ -75,7 +103,10 @@ const createWindow = () => {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', function(){
-  tray = new Tray(iconPath)
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  };
+//  app.dock.hide();
 });
 
 
