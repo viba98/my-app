@@ -7,4 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }, x);
   console.log("hello");
   console.log(c);
+  document.getElementById("pause").addEventListener('click', pauseAnimation);
 });
+
+function pauseAnimation(){
+  setTimeout(function () {
+        window.location = "congrats.html";
+  }, 1000);
+  console.log('hi');
+}

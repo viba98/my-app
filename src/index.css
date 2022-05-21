@@ -49,8 +49,6 @@ a{
 
 #feedback{
   position: absolute;
-  width: 90px;
-  height: 14px;
   font-family: 'IBM Plex Sans', sans-serif;
 
   font-style: normal;
@@ -81,9 +79,7 @@ a{
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
-
   text-align: center;
-
   color: #779AF4;
 }
 
@@ -119,7 +115,6 @@ input[type=number] {
 
 #likes{
   background: url("Assets/animation.gif") 0 0 no-repeat;
-  animation-play-state: paused;
 }
 
 .like {
@@ -129,43 +124,52 @@ input[type=number] {
     mix-blend-mode: overlay;
 }
 
-.paused {
-    animation-play-state: paused;
+
+
+#pause{
+  position: absolute;
+  background-color: transparent;
+  border-width: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+  text-transform: capitalize;
+  bottom: 16px;
+  left: 16px;
+  color: #8EA6E4;
+  z-index: 102;
 }
 
 h5{
   position: absolute;
-width: 140px;
-height: 16px;
-left: 129px;
-top: 178px;
+  left: 129px;
+  top: 178px;
 
-font-family: 'IBM Plex Sans';
-font-style: normal;
-font-weight: 600;
-font-size: 12px;
-line-height: 16px;
-/* identical to box height */
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height */
 
-text-align: center;
-text-transform: uppercase;
-
-color: #779AF4;
+  text-align: center;
+  text-transform: uppercase;
+  color: #779AF4;
 }
 
 h1{
   position: absolute;
-width: 231px;
-height: 33px;
-left: 84px;
-top: 194px;
+  left: 84px;
+  top: 194px;
 
-font-family: 'New York';
-font-style: normal;
-font-weight: 568;
-font-size: 28px;
-line-height: 33px;
-text-align: center;
-
-color: #779AF4;
+  font-family: 'New York';
+  font-style: normal;
+  font-weight: 568;
+  font-size: 28px;
+  line-height: 33px;
+  text-align: center;
+  color: #779AF4;
 }
