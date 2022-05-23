@@ -5,6 +5,7 @@
     <title>Mindful Pomodoro</title>
 		<link rel="stylesheet" type="text/css" href="index.css"/>
         <script src="popup.js"></script>
+        <script src="pomodoro.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=IBM+Plex+Serif:wght@600;700&display=swap" rel="stylesheet">
@@ -13,17 +14,27 @@
     <div id="bg-blur"></div>
       <div id="pomodoro">
 			     <div id="timer"></div>
-           <form action="meditation.html" method="get" id="form">
-             <input type="number" id="times" name="timeperiod" value="5" min="1" max="60">
-             <label for="timeperiod">mins</label>
+          <form action="#" onsubmit="myFunction(this)" method="get" id="form">
+            <p class= 'body timer one' id="min">05 </p> <p class = "body timer two" id="semicolon"> : </p> <p class= 'body timer three' id="sec">   00 </p>
               <br>
-              <a href=settings.html>
                 <button id="start">Start</button>
-              </a>
-            </form>
+          </form>
 		</div>
     <div class="bottom bar">
           <a href="mailto:viba98@gmail.com" class = "bottom" id="feedback">Send Feedback</a>
+          <div class="dropdown">
+            <button  class="dropbtn uright" id="feedback">Settings</button>
+            <div id="myDropdown" class="dropdownco">
+              <div class="smth"><a href="#" id="lvl1" onclick="optOne();return false;">Work Interval</a>
+                <div class="dropdowntwo">
+                  <a href="#"  onclick="optOne();return false;">15 Minutes</a>
+                  <a href="#" onclick="optTwo();return false;">20 Minutes</a>
+                  <a href="#" onclick="optThree();return false;">25 Minutes</a>
+                </div>
+              </div>
+              <a href="#" id="lvl2" onclick="optOne();return false;">Short Break</a>
+            </div>
+          </div>
     </div>
   </body>
 </html>

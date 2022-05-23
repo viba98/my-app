@@ -1,20 +1,22 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Mindful Pomodoro</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mindful Pomodoro</title>
 		<link rel="stylesheet" type="text/css" href="index.css"/>
+        <script src="popup.js"></script>
+        <script src="pomodoro.js" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=IBM+Plex+Serif:wght@600;700&display=swap" rel="stylesheet">
-	</head>
-	<body>
+  </head>
+  <body>
     <div id="bg-blur"></div>
       <div id="pomodoro">
-			   <h5> 5 minutes completed! </h5>
-         <h1> Congratulations! </h1>
-		  </div>
-      <div class="bottom bar">
-				<div><a href='index.html' class = "left"><p>Home</p></a></div>
+        <p class= 'body one' id="min">05 </p> <p class = "body two"> : </p> <p class= 'body three' id="sec">   03 </p>
+		</div>
+    <div class="bottom bar">
           <a href="mailto:viba98@gmail.com" class = "bottom" id="feedback">Send Feedback</a>
-      </div>
-	</body>
+    </div>
+  </body>
 </html>

@@ -66,7 +66,24 @@ a{
   z-index: 102;
 }
 
-#times{
+#mins{
+  position: absolute;
+  width: 32px;
+  height: 29px;
+  left: calc(50% - 48px);
+  top: calc(50% - 29px/2 - 30.5px);
+  z-index: 100;
+  background-color: transparent;
+  border-width: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #779AF4;
+}
+
+#secs{
   position: absolute;
   width: 32px;
   height: 29px;
@@ -84,21 +101,33 @@ a{
 }
 
 
-label{
+.body{
   position: absolute;
-  left:  calc(50% - 4px);
+  left: calc(50% - 4px);
   top: calc(50% - 29px/2 - 30px);
-
   font-family: 'IBM Plex Sans', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
-
   text-align: center;
-
   color: #779AF4;
+}
 
+.timer{
+  font-size: 24px;
+}
+
+.one{
+  left: calc(50% - 80px);
+}
+
+.two{
+  left: calc(50%);
+}
+
+.three{
+  left: calc(50% + 12px);
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -143,6 +172,25 @@ input[type=number] {
   z-index: 102;
 }
 
+.left{
+  position: absolute;
+  background-color: transparent;
+  border-width: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 510;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left;
+  text-transform: capitalize;
+  bottom: 16px;
+  left: 16px;
+  color: #8EA6E4;
+  z-index: 102;
+}
+
+
+
 h5{
   position: absolute;
   left: 129px;
@@ -172,4 +220,84 @@ h1{
   line-height: 33px;
   text-align: center;
   color: #779AF4;
+}
+
+/* drop down css */
+/* Dropdown Button */
+.uright{
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  height: 14px;
+}
+
+.dropbtn{
+  background-color: transparent;
+  border-width: 0;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdownco {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1010;
+  right: 16px;
+  top: 16px;
+}
+
+/* Links inside the dropdown */
+.dropdownco a {
+  color: black;
+  padding: 4px 4px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdownco a:hover {background-color: #ddd}
+
+/* second level of dropdown */
+.dropdowntwo {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  right: 160px;
+  top: 16px;
+  min-width: 160px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1020;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.dropdown:hover .dropdownco{
+  display: block;
+  visibility: visible;
+  padding: 10px;
+  top: 32px;
+}
+
+.smth{
+  height: 32px;
+  width: 160px;
+}
+
+.smth:hover .dropdowntwo {
+  display: block;
+  visibility: visible;
+}
+
+li{
+  list-style-type: none;
 }

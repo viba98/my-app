@@ -1,4 +1,4 @@
-var c = localStorage.getItem("myValue2");
+var c = localStorage.getItem("min");
 
 document.addEventListener('DOMContentLoaded', function() {
   var x = 1000*c*60;
@@ -13,6 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function pauseAnimation(){
   setTimeout(function () {
         window.location = "congrats.html";
-  }, 1000);
+  }, 100);
   console.log('hi');
 }

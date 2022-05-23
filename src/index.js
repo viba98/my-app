@@ -1,4 +1,4 @@
-const { app, Menu, BrowserWindow } = require('electron');
+const { app, Menu, BrowserWindow, globalShortcut } = require('electron');
 const path = require('path');
 const electron = require('electron');
 const Tray = electron.Tray;
@@ -16,8 +16,8 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 400,
-    height: 400,
+    width: 600,
+    height: 600,
     icon: 'Assets/icon.png',
     minimizable: false,
     maximizable: false,
@@ -45,6 +45,7 @@ const createWindow = () => {
   tray.setToolTip('Mindful Pomodoro')
   tray.setIgnoreDoubleClickEvents(true)
   tray.setTitle(x + '')
+
 
   /* context menu bar
   const contextMenu = Menu.buildFromTemplate([
@@ -74,9 +75,6 @@ const createWindow = () => {
     if (!forceQuit) {
       event.preventDefault();
       mainWindow.hide()
-      /*
-       * your process here
-       */
     }
   });
 }
@@ -97,6 +95,16 @@ const createWindow = () => {
             mainWindow.webContents.executeJavaScript(titleBarHack);
         }
     });
+    const ret = globalShortcut.register('CommandOrControl+U', () => {
+      mainWindow.show();
+    })
+
+    if (!ret) {
+      console.log('registration failed')
+    }
+
+    // Check whether a shortcut is registered.
+    console.log(globalShortcut.isRegistered('CommandOrControl+U'))
 };
 
 // This method will be called when Electron has finished
@@ -106,7 +114,7 @@ app.on('ready', function(){
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   };
-//  app.dock.hide();
+  app.dock.hide();
 });
 
 
