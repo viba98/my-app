@@ -13,26 +13,32 @@
   <body>
     <div id="bg-blur"></div>
       <div id="pomodoro">
-			     <div id="timer"></div>
-          <form action="#" onsubmit="myFunction(this)" method="get" id="form">
-            <p class= 'body timer one' id="min">05 </p> <p class = "body timer two" id="semicolon"> : </p> <p class= 'body timer three' id="sec">   00 </p>
-              <br>
-                <button id="start">Start</button>
-          </form>
-		</div>
+			  <div id="timer"></div>
+        <p class= 'body timer one' id="min">05 </p> <p class = "body timer two" id="semicolon"> : </p> <p class= 'body timer three' id="sec">   00 </p>
+        <br>
+        <button id="start" onclick="trialTimer(this)" >Start</button>
+        <!-- button id="bStart" onclick="trialTimer(this)" >Start</button>
+        <button id="mStart" onclick="trialTimer(this)" >Start</button -->
+		  </div>
     <div class="bottom bar">
           <a href="mailto:viba98@gmail.com" class = "bottom" id="feedback">Send Feedback</a>
           <div class="dropdown">
             <button  class="dropbtn uright" id="feedback">Settings</button>
-            <div id="myDropdown" class="dropdownco">
-              <div class="smth"><a href="#" id="lvl1" onclick="optOne();return false;">Work Interval</a>
-                <div class="dropdowntwo">
+            <div id="myDropdown" class="dropdownco dropdownfont">
+              <div id="lvl1"><a href="#">Work Interval</a>
+                <div class="dropdowntwo dropdownfont">
                   <a href="#"  onclick="optOne();return false;">15 Minutes</a>
                   <a href="#" onclick="optTwo();return false;">20 Minutes</a>
                   <a href="#" onclick="optThree();return false;">25 Minutes</a>
                 </div>
               </div>
-              <a href="#" id="lvl2" onclick="optOne();return false;">Short Break</a>
+              <div id="lvl2"><a href="#">Short Break</a>
+                <div class="dropdowntwo dropdownfont">
+                  <a href="#"  onclick="optBOne();return false;">2 Minutes</a>
+                  <a href="#" onclick="optBTwo();return false;">5 Minutes</a>
+                  <a href="#" onclick="optBThree();return false;">10 Minutes</a>
+                </div>
+              </div>
             </div>
           </div>
     </div>

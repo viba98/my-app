@@ -1,7 +1,7 @@
 var c = localStorage.getItem("min");
 
 document.addEventListener('DOMContentLoaded', function() {
-  var x = 1000*c*60;
+  var x = 1000*6;
   setTimeout(function () {
         window.location = "congrats.html";
   }, x);

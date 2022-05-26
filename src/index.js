@@ -7,6 +7,28 @@ const { is } = require('electron-util');
 
 let tray = null;
 
+const Store = require('./store.js');
+
+// initialize the store
+const store = new Store({
+  configName: 'user-preferences',
+  defaults: {
+    windowBounds: {
+      width: 800,
+      height: 600 ,
+      x: 0,
+      y: 0
+    },
+    intervals: {
+      work: 12,
+      break: 2
+    }
+  }
+});
+
+console.log(store.get('windowBounds'));
+console.log(store.get('intervals'));
+
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   // eslint-disable-line global-require
@@ -16,8 +38,8 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 600,
-    height: 600,
+    width: 650,
+    height: 400,
     icon: 'Assets/icon.png',
     minimizable: false,
     maximizable: false,
@@ -31,32 +53,11 @@ const createWindow = () => {
   } else {
     mainWindow.loadURL(`file://${path.join(__dirname, '../../index.html')}`);
   }
-  /* mainWindow.on('close', function (event) {
-    if(!app.isQuiting){
-        event.preventDefault();
-        mainWindow.hide();
-    }
-
-    return false;
-}); */
-
   var x = 10;
   tray = new Tray(iconPath)
   tray.setToolTip('Mindful Pomodoro')
   tray.setIgnoreDoubleClickEvents(true)
   tray.setTitle(x + '')
-
-
-  /* context menu bar
-  const contextMenu = Menu.buildFromTemplate([
-    { label: 'Quit', click: function () {
-      isQuiting = true;
-      app.quit();
-      },
-    }
-  ])
-  tray.setContextMenu(contextMenu) */
-
 
    tray.on('click', function(){
     if (mainWindow.isVisible()) {
@@ -114,11 +115,10 @@ app.on('ready', function(){
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   };
+  console.log('this works');
+  console.log(store.get('work'));
   app.dock.hide();
 });
-
-
-
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
@@ -128,8 +128,6 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
-
-
 
 app.on('activate', () => {
   // On OS X it's common to re-create a window in the app when the

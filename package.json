@@ -42,7 +42,8 @@
     }
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.0"
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^8.0.1"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.63",
@@ -53,9 +54,9 @@
     "electron": "18.2.4"
   },
   "mac": {
-  "extendInfo": {
-    "LSBackgroundOnly": 1,
-    "LSUIElement": 1
+    "extendInfo": {
+      "LSBackgroundOnly": 1,
+      "LSUIElement": 1
     }
   }
 }
